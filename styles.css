@@ -5,9 +5,10 @@
     height: 100vh;
 }
 .grid{
-    width: calc(100% / 16);
-    height: calc(100% / 16);
     box-sizing: border-box;
     border: 1px solid black;
 }
 
+.grid-size{
+padding: 10px 30px;
+}
