@@ -6,6 +6,16 @@ container.addEventListener("mouseup", () => isMouseDown = false);
 
 const button = document.querySelector(".grid-size");
 
+let randomColor = function(){
+    let r = Math.floor(Math.random()*255)
+    let b = Math.floor(Math.random()*255)
+    let g = Math.floor(Math.random()*255)
+
+    return `rgb(${r}, ${b}, ${g})`
+}
+
+console.log (randomColor());
+
 function createGrid(length){ 
      
         container.innerHTML = '';
@@ -13,18 +23,18 @@ function createGrid(length){
              const grid = document.createElement("div")
              grid.classList.add("grid")
              grid.style.width = `calc(100% / ${length})`;
-             grid.style.length = `calc(100% / ${length})`;
+             grid.style.height = `calc(100% / ${length})`;
              container.appendChild(grid);
          
              grid.addEventListener("mouseover", () => {
                  if(isMouseDown){
-                     grid.style.backgroundColor = 'darkgray';
+                     grid.style.backgroundColor = randomColor();
              }
          
          });
          
              grid.addEventListener("mousedown", () => {
-                 grid.style.backgroundColor = 'darkgray'
+                 grid.style.backgroundColor = randomColor();
              })
          }
      
